@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'forma-djr-display', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+:root{
+    --eurekaBlue: #0cb0ae;
+    --eurekaGreen: #25b816;
+    --eurekaWhite: #ffffff;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-image: url(example.png);
+}
+
+
+.navbar {
+    width: 40%;
+    height: 75px;
+    background-color: rgba(255,255,255,0.8);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: space-between;
+    position: fixed;
+    display: flex;
+    top: 0.5%;
+    z-index: 1;
+    border-radius: 10px;
+    transition: 0.4s
+}
+
+.navbar:hover{
+    backdrop-filter: blur(6px);
+}
+
+.navbar nav{
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 10px 30px 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar nav .logo{
+    width: 50px;
+    transition: 0.4s;
+    position: relative;
+}
+
+.navbar nav .logo:hover{
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    position: relative;
+}
+
+.navbar span{
+    font-size: 20px;
+}
+
+.aboutUsLink{
+    color: var(--eurekaBlue)
+}
+
+.bookNowLink{
+    color: var(--eurekaWhite)
+}
+
+.bookNowNavBox{
+    background-color: var(--eurekaBlue);
+    padding: 10px;
+    color: var(--eurekaWhite);
+    border-radius: 5px;
+}

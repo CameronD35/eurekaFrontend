@@ -16,23 +16,22 @@
 body{
     display: flex;
     justify-content: center;
-    background-image: url(example.png);
+    background-image: url(image-assets/example.png);
 }
 
 
 .navbar {
     width: 40%;
     height: 75px;
-    background-color: rgba(255,255,255,0.8);
     backdrop-filter: blur(3px);
     justify-content: center;
-    align-items: space-between;
+    align-items: center;
     position: fixed;
+    flex-direction:column;
     display: flex;
-    top: 0.5%;
+    top: 1%;
     z-index: 1;
-    border-radius: 10px;
-    transition: 0.4s
+    transition: 0.4s;
 }
 
 .navbar:hover{
@@ -40,6 +39,8 @@ body{
 }
 
 .navbar nav{
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 10px;
     width: 100%;
     position: relative;
     top: 0;
@@ -85,4 +86,20 @@ body{
     padding: 10px;
     color: var(--eurekaWhite);
     border-radius: 5px;
+}
+
+.navToggle{
+    width:10%;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 5px 5px 0px 0px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggleArrow{
+    max-height: 60%;
+    max-width: 60%;
+    opacity: 0.7;
 }

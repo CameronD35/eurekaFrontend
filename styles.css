@@ -36,10 +36,6 @@ body{
     transition: 0.4s;
 }
 
-.navbar:hover{
-    backdrop-filter: blur(6px);
-}
-
 .navbar nav{
     background-color: rgba(255,255,255,0.6);
     border-radius: 10px;
@@ -55,6 +51,9 @@ body{
     backdrop-filter: blur(3px);
 }
 
+.navbar nav:hover{
+    backdrop-filter: blur(6px);
+}
 .navbar nav .logo{
     width: 50px;
     transition: 0.4s;
@@ -112,9 +111,11 @@ body{
     height: 50%;
     width: 50%;
     opacity: 0.7;
+    pointer-events: inherit;
 }
 
 .toggleText{
     color: var(--eurekaBlue);
     font-size: 7px;
+    pointer-events: inherit;
 }

@@ -10,8 +10,9 @@
 <body>
     <div class="navbar">
         <div class="navToggle" id="navToggle">
-            <img src="image-assets/arrow.png" class="toggleArrow">
-            <span></span>
+            <div class="toggleContent" id="toggleContent">
+                <img src="image-assets/arrow.png" class="toggleArrow">
+            </div>
         </div>
         <nav>
             <!-- <a href="index.html"><img src="" class="logo"></a> -->
@@ -20,15 +21,19 @@
             </ul>
 
             <ul>
-                <li><span class="aboutUsLink">About Us</span></li>
+                <li><span class="navText" id="aboutUsLink">About Us</span></li>
                 <li>
                     <div class="bookNowNavBox" id="bookNowNavBox">
-                        <span class="bookNowLink">Book Now</span>
+                        <span class="navText" id="bookNowLink">Book Now</span>
                     </div>
                 </li>
             </ul>
         </nav>
         
     </div>
+    
+    <div class="landingSection" id="landingSection"></div>
+    <div class="locationsSection" id="locationsSection"></div>
+    <script src="index.js" type="module"></script>
 </body>
 </html>

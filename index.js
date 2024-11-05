@@ -1,15 +1,5 @@
 import createHTMLChildElement from "/modules/createElement.js";
 
-document.querySelector('.toggleContent').addEventListener('mouseenter', () => {
-    //console.log('hi there');
-
-    let toggleContentBox = document.getElementById('toggleContent');
-
-    toggleContentBox.replaceChildren();
-
-    createHTMLChildElement(toggleContentBox, 'span', 'toggleText', 'Hide Nav', 'toggleText');
-
-});
 
 window.addEventListener('click', (event) => {
 
@@ -35,22 +25,15 @@ window.addEventListener('click', (event) => {
     console.log('working')
     if(navOpen){
         navScale = '1 0';
+        document.querySelector('.toggleArrow').style.transform = 'rotate(180deg)';
+        document.querySelector('.navToggle').style.borderRadius = '5px'
         //document.
     } else {
+        document.querySelector('.toggleArrow').style.transform = 'rotate(0deg)';
+        document.querySelector('.navToggle').style.borderRadius = '5px 5px 0 0'
         navScale = '1 1';
     }
 
     navigationBox.style.scale = navScale;
 
-});
-
-document.querySelector('.toggleContent').addEventListener('mouseleave', () => {
-    //console.log('byw there');
-
-    let toggleContentBox = document.getElementById('toggleContent');
-
-    toggleContentBox.replaceChildren();
-
-    let arrow = createHTMLChildElement(toggleContentBox, 'img', 'toggleArrow', null, 'toggleArrow');
-    arrow.src = 'image-assets/arrow.png';
 });

@@ -97,6 +97,8 @@ body{
     border-radius: 5px 5px 0px 0px;
     height: 15px;
     backdrop-filter: blur(3px);
+    overflow: clip;
+    transition-duration: 0.4s;
 }
 
 .toggleContent{
@@ -111,7 +113,7 @@ body{
     height: 50%;
     width: 50%;
     opacity: 0.7;
-    pointer-events: inherit;
+    transition-duration: 0.4s;
 }
 
 .toggleText{

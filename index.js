@@ -11,11 +11,40 @@ document.querySelector('.toggleContent').addEventListener('mouseenter', () => {
 
 });
 
-window.addEventListener('click', (target) => {
-    console.log(target);
+window.addEventListener('click', (event) => {
+
+    let ifClickInside = document.getElementById('navToggle').contains(event.target);
+    console.log(ifClickInside);
+
+    if(!ifClickInside){
+        return;
+    }
+
+    let navigationBox = document.querySelector('.navigation');
+    let navScale = navigationBox.style.scale;
+    console.log(navScale);
+
+    let navOpen = (() => {
+        console.log('hello')
+        if(navScale != "1 0"){
+            return true;
+        } else {
+            return false;
+        }
+    })();
+    console.log('working')
+    if(navOpen){
+        navScale = '1 0';
+        //document.
+    } else {
+        navScale = '1 1';
+    }
+
+    navigationBox.style.scale = navScale;
+
 });
 
-document.querySelector('.toggleContent').addEventListener('mouseout', () => {
+document.querySelector('.toggleContent').addEventListener('mouseleave', () => {
     //console.log('byw there');
 
     let toggleContentBox = document.getElementById('toggleContent');

@@ -119,3 +119,8 @@ body{
     font-size: 7px;
     pointer-events: inherit;
 }
+
+.navigation{
+    transition-duration: 0.4s;
+    transform-origin: top;
+}

@@ -10,7 +10,7 @@ window.addEventListener('click', (event) => {
         return;
     }
 
-    let navigationBox = document.querySelector('.navigation');
+    let navigationBox = document.querySelector('.topNavigation');
     let navScale = navigationBox.style.scale;
     console.log(navScale);
 
@@ -37,3 +37,7 @@ window.addEventListener('click', (event) => {
     navigationBox.style.scale = navScale;
 
 });
+
+document.querySelector('.sideNavbar').addEventListener('mouseenter', () => {
+    console.log('test');
+})

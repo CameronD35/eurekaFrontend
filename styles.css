@@ -17,11 +17,25 @@
 
 body{
     display: flex;
-    justify-content: center;
-    background-image: url(image-assets/example.png);
-    background-size: cover;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 
+.colorOverlay{
+    width: 1px;
+    height: 1px;
+    border-radius: 100%;
+    transition-duration: 1s;
+    top: 50%;
+    right: 0;
+    position: fixed;
+    background-color: black;
+    opacity: 0.3;
+    transform-origin: center;
+    scale: 3;
+    box-shadow: 0 0 50px black;
+}
 
 .navbar {
     width: 40%;
@@ -55,7 +69,7 @@ body{
     backdrop-filter: blur(6px);
 }
 .navbar nav .logo{
-    width: 50px;
+    width: 70px;
     transition: 0.4s;
     position: relative;
 }
@@ -135,7 +149,7 @@ body{
 }
 
 .sideNavigation{
-    width: 10%;
+    width: auto;
     height: 25%;
     position: fixed;
     right: 0;
@@ -143,6 +157,9 @@ body{
     display: flex;
     justify-content: end;
     align-items: center;
+    transform-origin: right;
+    transition-duration: 0.4s;
+    z-index: 1;
 }
 
 .sideNavbar{
@@ -154,10 +171,10 @@ body{
     transition-duration: 0.4s;
 }
 
-.sideNavbar:hover{
+/* .sideNavbar:hover{
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     scale: 2 2;
-}
+} */
 
 .currentSection{
     width: 100%;
@@ -166,15 +183,39 @@ body{
 }
 
 .sectionTitlesContainer{
-    width: calc(10vw - 10px);
+    width: auto;
     height: 100%;
     position: relative;
     padding-right: 10px;
 }
 
 .sectionTitleBox{
+    transition-duration: 0.4s;
     height: 33.3%;
     display: flex;
     justify-content: end;
     align-items: center;
+    opacity: 0;
+}
+
+.sectionTitle{
+    transition-duration: 0.4s;
+    color: var(--eurekaWhite);
+    transform-origin: right;
+}
+
+/* Landing Section */
+
+.landingSection{
+    width: 100vw;
+    height: 105vh;
+    background-image: url(image-assets/example.png);
+    background-size: cover;
+}
+
+.locationsSection{
+    width: 100vw;
+    height: 105vh;
+    background-image: url(image-assets/litMountain.jpeg);
+    background-size: cover;
 }

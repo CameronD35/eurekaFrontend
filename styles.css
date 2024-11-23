@@ -26,7 +26,7 @@ body{
     width: 1px;
     height: 1px;
     border-radius: 100%;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     top: 50%;
     right: 0;
     position: fixed;
@@ -178,8 +178,9 @@ body{
 
 .currentSection{
     width: 100%;
-    height: 33.3%;
+    height: 25%;
     background-color: var(--eurekaGreen);
+    transition-duration: 0.4s;
 }
 
 .sectionTitlesContainer{
@@ -191,7 +192,7 @@ body{
 
 .sectionTitleBox{
     transition-duration: 0.4s;
-    height: 33.3%;
+    height: 25%;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -213,9 +214,45 @@ body{
     background-size: cover;
 }
 
+/* About Us Section */
+.aboutUsSection{
+    width: 100vw;
+    height: 105vh;
+    background-image: url(image-assets/coolvalley.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(3px);
+}
+
+/* Locations Section */
+
 .locationsSection{
     width: 100vw;
     height: 105vh;
     background-image: url(image-assets/litMountain.jpeg);
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.locationsText{
+    font-size: 30px;
+    color: white;
+}
+
+/* Locations Section */
+
+.ppSection{
+    width: 100vw;
+    height: 105vh;
+    background-image: url(image-assets/litMountain.jpeg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

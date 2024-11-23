@@ -2,6 +2,73 @@ import createHTMLChildElement from "/modules/createElement.js";
 
 const globalSections = [document.getElementById('landingSection'), document.getElementById('locationsSection')]
 
+let sections = [];
+
+let observerParameters = {
+    threshold: 0.55
+}
+
+const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+        //console.log(entry.target);
+
+        sections.forEach((section) => {
+            console.log(section.element.id, entry.target.id)
+            if(entry.target.id === section.element.id){
+
+                //console.log('hello');
+
+                // Sets the little green section's translation to a position based on the sections order
+                let highlightedSectionTranslationPercent = 100*section.sectionID;
+                
+                // Actually moves the little green section
+                document.querySelector('.currentSection').style.transform = `translateY(${highlightedSectionTranslationPercent}%)`;
+
+                section.title.style.color = 'var(--eurekaGreen)';
+            } else {
+                section.title.style.color = 'var(--eurekaWhite)';
+            }
+        })
+    }
+}, observerParameters);
+
+
+
+class PageSection {
+    constructor(sectionTitle, sectionID, elementID, observerFunction){
+        this.sectionTitle = sectionTitle;
+        this.sectionID = sectionID;
+        this.element = document.getElementById(elementID);
+        this.observerFunction = observerFunction;
+        this.observe;
+        this.title;
+
+        console.log(this.element)
+
+        sections.push(this);
+    }
+
+    createSidebarSection(){
+        let titleBox = createHTMLChildElement(document.querySelector('.sectionTitlesContainer'), 'div', 'sectionTitleBox', null, `${(this.sectionTitle).replaceAll(/\s/g, "")}SectionTitleBox`);
+        let title = createHTMLChildElement(titleBox, 'span', 'sectionTitle', this.sectionTitle, `${(this.sectionTitle).replaceAll(/\s/g, "")}Title`);
+        this.title = title;
+    }
+
+    createObserverEvent(){
+        this.observe = observer.observe(this.element);
+    }
+
+    moveSideNav(sectionID){
+        let sideNavIndicator = document.querySelector('.currentSection');
+    }
+
+    checkIfInFocus(){
+        document.querySelector('.currentSection').style.transform = `${(100/sections.length)*sectionID}`;
+    }
+
+}
+
+
 window.addEventListener('click', (event) => {
 
     let ifClickInside = document.getElementById('navToggle').contains(event.target);
@@ -96,12 +163,25 @@ function detectForCurrentSection(){
     })
 }
 
-const observer = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-        if (entry.isIntersecting){
-            console.log('it is rendered')
-        }
-    }
-})
+observer.observe(document.querySelector('.locationsSection'));
 
-detectForCurrentSection()
+
+let landingSection = new PageSection('Eureka', 0, 'landingSection', () => {2+2;})
+landingSection.createSidebarSection();
+landingSection.createObserverEvent();
+
+let aboutUsSection = new PageSection('About Us', 1, 'aboutUsSection', () => {2+2;})
+aboutUsSection.createSidebarSection();
+aboutUsSection.createObserverEvent();
+
+
+let locationsSection = new PageSection('Locations', 2, 'locationsSection', () => {2+2;})
+locationsSection.createSidebarSection();
+locationsSection.createObserverEvent();
+
+let ppSection = new PageSection('pp', 3, 'ppSection', () => {2+2;})
+ppSection.createSidebarSection();
+ppSection.createObserverEvent();
+
+detectForCurrentSection();
+console.log(sections)
